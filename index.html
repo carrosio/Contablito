@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script src="script.js" type="text/javascript"></script>
+    <title>Contablito</title>
+</head>
+
+<body>
+    <h1>Contablito</h1>
+
+    <div id="descripción">
+        <label for="inputDesc">Descripción: </label>
+        <input type="text" id="inputDesc" autofocus>
+    </div>
+    <br>
+
+    <div id="transtype">
+        <label>Tipo de Transacción:</label>
+        <label><input type="radio" name="radioTrans" id="radioTrans1" value="compra" checked>Compra</label>
+        <label><input type="radio" name="radioTrans" id="radioTrans2" value="venta">Venta</label>
+    </div>
+    <br>
+
+    <div id="iva">
+        <label>Tipo IVA:</label>
+        <label><input name="radioIVA" type="radio" id="radioIVA1" checked>Básico</input></label>
+        <label><input name="radioIVA" type="radio" id="radioIVA2">Mínimo</input></label>
+        <label><input name="radioIVA" type="radio" id="radioIVA3">Exento</input></label>
+    </div>
+    <br>
+
+    <div id="subtotal">
+        <label for="inputSub">Subtotal ($):</label>
+        <input type="number" id="inputSub">
+        <input id="btnIngresar" type="button" value="Ingresar">
+    </div>
+    <br>
+
+    </form>
+    <table id="tabla">
+        <tr>
+            <th>Descripción</th>
+            <th>Tipo</th>
+            <th>Subtotal ($)</th>
+            <th>IVA ($)</th>
+            <th>Total (IVA Inc)</th>
+        </tr>
+        <tr>
+            <td>Papas 1kg</td>
+            <td>Venta</td>
+            <td>100</td>
+            <td>22</td>
+            <td>122</td>
+        </tr>
+        <tr>
+            <td>Papas 1kg</td>
+            <td>Venta</td>
+            <td>100</td>
+            <td>22</td>
+            <td>122</td>
+        </tr>
+        <tr>
+            <td>Papas 1kg</td>
+            <td>Venta</td>
+            <td>100</td>
+            <td>22</td>
+            <td>122</td>
+        </tr>
+
+    </table>
+    <br>
+
+    <p>Total Ventas $:</p>
+    <p>Total Compras $:</p>
+</body>
+
+</html>
