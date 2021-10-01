@@ -30,7 +30,7 @@ function enterProducts(desc, type, sub, iva){
    ' <td> ' + desc + '</td>' +
    ' <td> ' + type + '</td>' +
    ' <td> ' + sub + '</td>' +
-   ' <td> ' + iva * 100 + '</td>' +
+   ' <td> ' + sub * iva + '</td>' +
    ' <td> ' + (sub * (1 + iva)) + '</td>'
 }
 
