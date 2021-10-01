@@ -5,7 +5,7 @@ let desc, type, sub, iva
 let totSell, totBuy
 
 
-// modifico variables
+// asigno valores a las variables
 function readProducts(){
     desc = document.getElementById("inputDesc").value
     type = document.getElementById("radioTrans1").checked ? "Compra" : "Venta"
@@ -30,15 +30,20 @@ function enterProducts(desc, type, sub, iva){
    ' <td> ' + desc + '</td>' +
    ' <td> ' + type + '</td>' +
    ' <td> ' + sub + '</td>' +
-   ' <td> ' + sub * iva + '</td>' +
-   ' <td> ' + (sub * (1 + iva)) + '</td>'
+   ' <td> ' + Math.round((sub * iva)) + '</td>' +
+   ' <td name="total"> ' + Math.round((sub * (1 + iva))) + '</td>'
 }
 
-function arrProducts(){
 
-}
 
 function totalSell(){
+    let table = document.getElementById("tabla")
+    let rowLength = table.rows.length
+    
+    for (let i; i < rowLength; i++) {
+        
+    }
+
 
 }
 
@@ -46,9 +51,12 @@ const sendButm = document.getElementById("btnIngresar")
 sendButm.onclick = function ( ) {  
     readProducts()
     enterProducts(desc, type, sub, iva)
-    console.log(desc)
+    totalSell()
+
     
 }
+
+
 
 
 
