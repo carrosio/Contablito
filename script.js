@@ -1,9 +1,8 @@
 
-// declaro variables
+// declaro variables globales
 let desc, type, sub, iva
-
-let totSell, totBuy
-
+let sellcount = 0
+let buycount = 0
 
 // asigno valores a las variables
 function readProducts(){
@@ -21,10 +20,10 @@ function readProducts(){
     }
 }
 
+//pongo los datos en la tabla
 function enterProducts(desc, type, sub, iva){
     const createTr = document.createElement("tr")
     document.getElementById("tabla").appendChild(createTr)
-    
     // crear productos //
     createTr.innerHTML = 
    ' <td> ' + desc + '</td>' +
@@ -34,9 +33,28 @@ function enterProducts(desc, type, sub, iva){
    ' <td name="total"> ' + Math.round((sub * (1 + iva))) + '</td>'
 }
 
+// sumo los items de compra y venta
+function sum(){
+    if (type == "Compra"){
+        buycount = buycount + (sub * (1 + iva))
+       }
+    else {
+        sellcount = sellcount + (sub * (1 + iva))
+       }
+}
+
+// introduzco la suma en el total HTML
+function enterSum(){
+    const sell = document.getElementById("totSell")
+    const buy = document.getElementById("totBuy")
+    sell.innerHTML = 'Total Ventas $: ' + Math.round(sellcount) 
+    buy.innerHTML = 'Total Compras $: ' + Math.round(buycount)
+}
 
 
-function totalSell(){
+
+
+/* function totalSell(){
     
     let rows = document.getElementById("tabla").rows
     let filter = []
@@ -56,14 +74,13 @@ function totalSell(){
     }
     return sum
 }
-
+ */
 const sendButm = document.getElementById("btnIngresar")
 sendButm.onclick = function ( ) {  
     readProducts()
     enterProducts(desc, type, sub, iva)
-    totalSell()
-
-    
+    sum()
+    enterSum()
 }
 
 
