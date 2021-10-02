@@ -28,7 +28,7 @@ function enterProducts(desc, type, sub, iva){
     // crear productos //
     createTr.innerHTML = 
    ' <td> ' + desc + '</td>' +
-   ' <td> ' + type + '</td>' +
+   ' <td name="buyOrSell"> ' + type + '</td>' +
    ' <td> ' + sub + '</td>' +
    ' <td> ' + Math.round((sub * iva)) + '</td>' +
    ' <td name="total"> ' + Math.round((sub * (1 + iva))) + '</td>'
@@ -37,14 +37,24 @@ function enterProducts(desc, type, sub, iva){
 
 
 function totalSell(){
-    let table = document.getElementById("tabla")
-    let rowLength = table.rows.length
     
-    for (let i; i < rowLength; i++) {
-        
+    let rows = document.getElementById("tabla").rows
+    let filter = []
+    for (z of rows) {
+        filter
     }
+    console.log(rows)
 
-
+    let x = document.getElementsByName("total")
+    let arr = []
+    let sum = 0
+    for (let i = 0; i < x.length; i++){
+        arr.push(parseFloat(x[i].innerHTML))
+    }
+    for (let j = 0; j < arr.length; j++ ) {
+        sum = sum + arr[j]
+    }
+    return sum
 }
 
 const sendButm = document.getElementById("btnIngresar")
